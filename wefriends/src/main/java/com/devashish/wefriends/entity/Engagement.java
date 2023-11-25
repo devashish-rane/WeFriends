@@ -1,8 +1,6 @@
 package com.devashish.wefriends.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -12,8 +10,9 @@ import java.util.List;
 @Entity
 public class Engagement {
     String name;
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
-    String id;
+    Long id;
     String city;
     List<String> tags = new ArrayList<String>();
     @ManyToMany(mappedBy = "engagements")

@@ -1,8 +1,6 @@
 package com.devashish.wefriends.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -13,8 +11,10 @@ import java.util.List;
 @Entity
 public class Users {
         String name;
-        String id;
+
         @Id
+        @GeneratedValue(strategy = GenerationType.AUTO)
+        Long id;
         List<String> hobbies = new ArrayList<String>();
         String email;
         String password;
